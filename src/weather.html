@@ -1,0 +1,16 @@
+<template>
+
+    <div class="card">
+        <div class="avatar">
+            <img src.bind="ImageUrl"/>
+        </div>
+        <div class="content">
+            <p class="name">City Name : ${weatherDetail.title}</p>
+            <p class="name">Temparature : ${weatherDetail.consolidated_weather[0].the_temp | decimalFormat}</p>
+            <p class="name">Max. Temp. : ${weatherDetail.consolidated_weather[0].max_temp | decimalFormat}</p>
+            <p class="name">Min. Temp. : ${weatherDetail.consolidated_weather[0].min_temp | decimalFormat}</p>
+            <p><a class="btn btn-default" href.bind="moreDetailsUrl">More Details</a></p>
+        </div>
+    </div>
+
+</template>

@@ -1,0 +1,19 @@
+<template>
+        
+    <require from="./weather"></require>
+
+    <section class="au-animate">
+    <h2><center>${heading}</center></h2>
+
+
+        <div class="row au-stagger">
+            <div class="col-sm-6 col-md-3 card-container au-animate" repeat.for="element of cityDetails">
+                <weather woeid.bind="element.woeid"></weather>
+            </div>
+        </div>
+
+    </section>
+
+</template>
+        
+        

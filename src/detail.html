@@ -1,0 +1,32 @@
+<template>
+
+    <div class="row">
+        <section class="au-animate">
+            <h2><center>${heading}</center></h2>
+
+            <h2><center>${weatherDetail.title}</h2>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col"></th>
+                        <th scope="col">Temparature</th>
+                        <th scope="col">Minimum Temperature</th>
+                        <th scope="col">Maximum Temparature</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr repeat.for="detail of weatherDetail.consolidated_weather">
+                        <td>${detail.applicable_date | dateFormat }</td>
+                        <td><img src.bind="ImageBaseUrl + detail.weather_state_abbr + '.png'"/></td>
+                        <td>${detail.the_temp | decimalFormat}</td>
+                        <td>${detail.min_temp | decimalFormat}</td>
+                        <td>${detail.max_temp | decimalFormat}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+    
+</template>
